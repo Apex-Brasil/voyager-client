@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "visualstudioexptteam.vscodeintellicode",
+    "formulahendry.auto-rename-tag",
+    "eamodio.gitlens",
+    "quicktype.quicktype",
+    "bradlc.vscode-tailwindcss",
+    "Gruntfuggly.todo-tree"
+  ]
+}

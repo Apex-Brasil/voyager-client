@@ -1,0 +1,94 @@
+:root {
+  --primary-color: white;
+  --secondary-color: black;
+  --bg-primary-color: white;
+  --bg-border: black;
+}
+
+.dark,
+[data-theme="dark"] {
+  --primary-color: black;
+  --secondary-color: white;
+  --bg-primary-color: #171717;
+  --bg-border: white;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip > .button {
+  visibility: hidden;
+  width: 180px;
+  background-color: var(--bg-primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid var(--bg-border);
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  bottom: 80px;
+  right: 5px;
+  z-index: 101;
+}
+
+.tooltip:hover .button {
+  visibility: visible;
+}
+
+.tooltip .button::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--bg-border) transparent transparent transparent;
+}
+
+.tooltip-left-side {
+  min-width: 180px;
+  white-space: nowrap;
+  background-color: var(--bg-primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid var(--primary-color);
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip > .tooltip-left-side {
+  visibility: hidden;
+  width: max-content;
+  background-color: var(--bg-primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid var(--primary-color);
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  bottom: 80px;
+  right: 5px;
+  z-index: 101;
+}
+
+.tooltip:hover .tooltip-left-side {
+  visibility: visible;
+}
+
+.tooltip-left-side::after {
+  content: " ";
+  position: absolute;
+  top: 30%;
+  right: 100%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent var(--primary-color) transparent transparent;
+}

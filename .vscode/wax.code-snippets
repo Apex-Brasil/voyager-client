@@ -1,0 +1,91 @@
+{
+  "Import active": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "active",
+    "body": ["const { activeUserData } = useAuth();"]
+  },
+  "Create new generic contract": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newContract",
+    "body": [
+      "const contract${1:} = () => {",
+      "\tconst action = {};",
+      "",
+      "\ttry {",
+      "\t\tactiveUserData",
+      "\t\t\t.signTransaction(",
+      "\t\t\t\t{",
+      "\t\t\t\t\tactions: [action],",
+      "\t\t\t\t},",
+      "\t\t\t\t{",
+      "\t\t\t\t\tblocksBehind: 3,",
+      "\t\t\t\t\texpireSeconds: 1200,",
+      "\t\t\t\t},",
+      "\t\t\t)",
+      "\t\t\t.then(() => {",
+      "\t\t\t\ttoast.sucess(``);",
+      "\t\t\t})",
+      "\t\t\t.catch((e: any) => {",
+      "\t\t\t\ttoast.error(",
+      "\t\t\t\t\te.message?.split(`message:`)[1]",
+      "\t\t\t\t\t\t? e.message?.split(`message:`)[1]",
+      "\t\t\t\t\t\t: e.message,",
+      "\t\t\t\t);",
+      "\t\t\t\tconsole.log(e);",
+      "\t\t\t});",
+      "\t} catch (error: any) {",
+      "\t\ttoast.error(",
+      "\t\t\tJSON.parse(",
+      "\t\t\t\tJSON.stringify(error),",
+      "\t\t\t).cause.json?.error.details[0]?.message.split",
+      "\t\t\t(`message:`)[1],",
+      "\t\t);",
+      "\t}",
+      "};"
+    ]
+  },
+  "Create atomicAssets transfer": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newAtomic",
+    "body": [
+      "const actionTransfer = {",
+      "\taccount: atomicassets,",
+      "\tname: `transfer`,",
+      "\tauthorization: [",
+      "\t\t{",
+      "\t\t\tactor: activeUserData.accountName,",
+      "\t\t\tpermission: activeUserData.requestPermission,",
+      "\t\t},",
+      "\t],",
+      "\tdata: {",
+      "\t\tfrom: activeUserData?.accountName,",
+      "\t\tto: `${1:}`,",
+      "\t\tasset_ids: ${2:},",
+      "\t\tmemo: `${3:}`,",
+      "\t},",
+      "};"
+    ]
+  },
+  "Create deposit transfer": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newDeposit",
+    "body": [
+      "const depositAction = {",
+      "\taccount: `${1:}`,",
+      "\tname: `transfer`,",
+      "\tauthorization: [",
+      "\t\t{",
+      "\t\t\tactor: activeUserData.accountName,",
+      "\t\t\tpermission: activeUserData.requestPermission,",
+      "\t\t},",
+      "\t],",
+      "\tdata: {",
+      "\t\tfrom: activeUserData?.accountName,",
+      "\t\tto: `${1:}`,",
+      "\t\tquantity: `${2:}`,",
+      "\t\tmemo: `deposit`,",
+      "\t},",
+      "};"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "Create react component": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newComponent",
+    "body": [
+      "export const ${1:ComponentName} = () => {",
+      "\treturn (",
+      "\t\t<div className={``}>",
+      "\t\t\t<h1 className={``}>${1:ComponentName}</h1>",
+      "\t\t</div>",
+      "\t);",
+      "};",
+      ""
+    ]
+  },
+  "Create useEffect": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newEffec",
+    "body": ["useEffect(() => {", "\t", "}, []);"]
+  },
+  "Create useState": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newState",
+    "body": ["const [${1:}, set${1:}] = useState<${2:}>(${3:});"]
+  },
+  "Create console": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newConsole",
+    "body": ["console.log(`${1:}`, ${1:})"]
+  },
+  "Create function": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newFunc",
+    "body": ["const ${1:} = () => {", "\t", "};"]
+  },
+  "Create async function": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newAsync",
+    "body": ["const ${1:} = async () => {", "\t", "};"]
+  }
+}

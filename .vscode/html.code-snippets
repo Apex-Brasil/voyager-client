@@ -1,0 +1,27 @@
+{
+  "Create className": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newClassName",
+    "body": ["className={`${1:}`}"]
+  },
+  "Create div component": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newDiv",
+    "body": ["<div className={``}>${1:}</div>"]
+  },
+  "Create span component": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newSpan",
+    "body": ["<span className={``}>${1:}</span>"]
+  },
+  "Create p component": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newP",
+    "body": ["<p className={``}>${1:}</p>"]
+  },
+  "Create button component": {
+    "scope": "javascriptreact, typescriptreact, javascript, typescript",
+    "prefix": "newButton",
+    "body": ["<button className={``}>${1:}</button>"]
+  }
+}
